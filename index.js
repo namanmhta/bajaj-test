@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// ✅ Root Route (Fixes "Cannot GET /" issue)
+// ✅ Root Route (Prevents "Cannot GET /")
 app.get("/", (req, res) => {
     res.send("API is running. Use /bfhl for GET and POST requests.");
 });
