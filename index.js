@@ -21,10 +21,11 @@ app.get("/bfhl", (req, res) => {
 
 // ✅ POST /bfhl - Processes input data
 app.post("/bfhl", (req, res) => {
-    const { data } = req.body;
+    console.log("Received request body:", req.body); // ✅ Debug log
 
+    const { data } = req.body;
     if (!data || !Array.isArray(data)) {
-        return res.status(400).json({ is_success: false, message: "Invalid input" });
+        return res.status(400).json({ is_success: false, message: "Invalid input. Expected JSON with 'data' array." });
     }
 
     let numbers = [];
@@ -50,6 +51,7 @@ app.post("/bfhl", (req, res) => {
         highest_alphabet: highestAlphabet
     });
 });
+
 
 // ✅ Start Server
 app.listen(PORT, () => {
