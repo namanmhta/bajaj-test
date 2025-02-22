@@ -89,7 +89,7 @@
             const filterOptions = Array.from(document.getElementById("filter").selectedOptions).map(option => option.value);
             
             try {
-                const jsonData = JSON.parse(input); // Validate JSON format
+                const jsonData = JSON.parse(input);
 
                 fetch("https://bajaj-test-nycz.onrender.com/bfhl", {
                     method: "POST",
